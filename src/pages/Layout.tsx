@@ -1,31 +1,16 @@
 import {Link, Outlet} from 'react-router-dom';
+import Navbar from '../components/Navbar.tsx';
+
+import background from '../assets/background2.jpg';
 
 export default function Layout(){
   return (
-    <>
-    <nav>
-      <div className="flex">
-        <ul className="list-none">
-          <li className="active">
-            <Link to="/">Home</Link>
-          </li>
-
-          <li>
-            <Link to="/history">Historical Places</Link>
-          </li>
-
-          <li>
-            <Link to="/">Useful Links</Link>
-          </li>
-
-          <li>
-            <Link to="/contact">Contact Me</Link>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-    <Outlet />
-    </>
+    <div
+      className="w-screen h-screen bg-cover"
+      style={{backgroundImage: `url(${background})`}}
+    >
+      <Navbar />
+      <Outlet />
+    </div>
   );
 }
