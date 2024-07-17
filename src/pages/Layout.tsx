@@ -1,16 +1,18 @@
 import {Link, Outlet} from 'react-router-dom';
 import Navbar from '../components/Navbar.tsx';
 
-import background from '../assets/background2.jpg';
+import noise from '../assets/nnnoise2.svg';
 
 export default function Layout(){
   return (
-    <div
-      className="w-screen h-screen bg-cover"
-      style={{backgroundImage: `url(${background})`}}
-    >
+    <>
+      <div
+        className="w-full h-full bg-cover fixed -z-50 bg-slate-900"
+        style={{backgroundImage: `url(${noise})`}}
+      >
+      </div>
       <Navbar />
       <Outlet />
-    </div>
+    </>
   );
 }

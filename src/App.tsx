@@ -2,8 +2,9 @@
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 import Layout from './pages/Layout.tsx';
 import Home from './pages/Home.tsx';
-import Blogs from './pages/Blogs.tsx';
+import Links from './pages/Links.tsx';
 import Contact from './pages/Contact.tsx';
+import Places from './pages/Places.tsx';
 import NoPage from './pages/NoPage.tsx';
 
 const router = createBrowserRouter([
@@ -17,11 +18,15 @@ const router = createBrowserRouter([
         element: <Home />
       },
       {
-        path: 'blogs',
-        element: <Blogs />
+        path: '/places',
+        element: <Places />
       },
       {
-        path: 'contact',
+        path: '/links',
+        element: <Links />
+      },
+      {
+        path: '/contact',
         element: <Contact />
       },
       {
@@ -34,7 +39,9 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <RouterProvider router={router} />
+    <div id="App" className="text-white">
+      <RouterProvider router={router} />
+    </div>
   );
 }
 

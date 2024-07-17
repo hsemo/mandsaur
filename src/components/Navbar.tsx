@@ -23,14 +23,13 @@ const Navbar = () => {
   // Array containing navigation items
   const navItems: Array<link> = [
     { id: 1, text: 'Home', to: '/' },
-    { id: 2, text: 'History', to: '/history' },
+    { id: 2, text: 'Places', to: '/places' },
     { id: 3, text: 'Links', to: '/links' },
-    { id: 4, text: 'About', to: '/about' },
-    { id: 5, text: 'Contact', to: '/contact' },
+    { id: 4, text: 'Contact', to: '/contact' },
   ];
 
   return (
-    <div className='backdrop-blur-md backdrop-brightness-50 flex justify-end md:justify-center items-center h-14 max-w-full mx-auto px-4 text-white'>
+    <div className='backdrop-blur-md backdrop-brightness-50 flex justify-end md:justify-center items-center h-14 max-w-full mx-auto px-4 text-white sticky top-0 z-50'>
 
       {/* Desktop Navigation */}
       <ul className='hidden md:flex'>
