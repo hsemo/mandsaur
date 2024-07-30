@@ -31,16 +31,25 @@ const places = [
   }
 ];
 
-function Modal({showModal, toggleModal}:{showModal: boolean, toggleModal: any}){
+function Modal({showModal, toggleModal, img, title}:{showModal: boolean, toggleModal: any, img: string | undefined, title: string}){
   return(
-    <div className={(showModal ? '' : 'hidden ') + "fixed h-screen w-screen flex flex-wrap flex-col justify-center items-center bg-black/[.8] z-50"}>
+    <div className={(showModal ? '' : 'hidden ') + "fixed h-screen w-screen flex flex-wrap flex-col justify-start items-center bg-black/[.8] z-50 overflow-auto"}>
       <button
         className="absolute top-0 right-0 m-2 px-4 py-2 bg-red-500 text-black rounded-full hover:bg-red-700 hover:text-white"
         onClick={toggleModal}
       >
         X
       </button>
-      <h1>This is a Modal heading</h1>
+
+      <h1 className="animate-zoom text-2xl my-2">
+        {title}
+      </h1>
+
+      <img
+        className="object-cover w-[60%] animate-zoom"
+        src={img}
+        alt={img?.split('.')[0]}
+      />
     </div>
   );
 }
@@ -51,7 +60,7 @@ function Place({title, desc, img, toggleModal}:{title: string, desc: string, img
       className='relative after:inline after:text-center after:absolute after:top-0 after:left-0 after:right-0 after:text-xl after:bg-black/[.5] after:text-transparent after:transition-transform-all after:duration-200 after:h-0 hover:after:h-10 hover:after:text-white after:content-[attr(data-image-heading)] cursor-zoom-in'
       data-image-heading={title}
     >
-      <img 
+      <img
         className="object-cover w-[300px] h-[300px]"
         src={img}
         alt={img.split('.')[0]}
@@ -68,22 +77,33 @@ function Place({title, desc, img, toggleModal}:{title: string, desc: string, img
 
 export default function Places(){
   const [showModal, setShowModal] = useState(false);
+  const [currentModalImage, setCurrentModalImage] = useState(-1);
 
-  const toggleModal = () => setShowModal(!showModal);
+  const toggleModal = (imgIndex: number = -1) => {
+    setShowModal(!showModal);
+    // if(currentModalImage >= 0){
+    //   setCurrentModalImage(-1);
+    // } else {
+    //   setCurrentModalImage(imgIndex);
+    // }
+    setCurrentModalImage(imgIndex);
+  }
 
   return (
     <div
       className="flex flex-wrap justify-center gap-5 m-auto"
     >
       {
-        places.map(({title, image}) => {
-          return <Place title={title} img={image} desc="" toggleModal={toggleModal} />;
+        places.map(({title, image}, i: number) => {
+          return <Place title={title} img={image} desc="" toggleModal={() => toggleModal(i)} />;
       })
       }
 
       <Modal
         showModal={showModal}
         toggleModal={toggleModal}
+        img={places[currentModalImage]?.image}
+        title={places[currentModalImage]?.title}
       />
     </div>
   );

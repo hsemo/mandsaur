@@ -35,7 +35,7 @@ const Navbar = () => {
   */
 
   return (
-    <div className='backdrop-blur-md backdrop-brightness-50 flex justify-end md:justify-center items-center h-14 max-w-full mx-auto px-4 text-white sticky top-0 z-50'>
+    <div className='backdrop-blur-md backdrop-brightness-50 flex justify-end md:justify-center items-center h-14 max-w-full mx-auto px-4 text-white sticky top-0 z-10'>
 
       {/* Desktop Navigation */}
       <ul className='hidden md:flex'>
