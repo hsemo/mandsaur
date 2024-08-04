@@ -45,7 +45,7 @@ function GeneralInfo(){
 function Geography(){
   return (
     <div
-      className="flex text-center mx-20 justify-center w-auto rounded-3xl backdrop-blur-sm p-20 backdrop-brightness-200"
+      className="flex text-center mx-20 justify-center w-auto rounded-3xl backdrop-blur-sm p-20"
     >
       <img className="w-[500px] h-96 object-cover m-2 rounded-xl" src={mdsInMP} alt="Mandsaur in Madhya Pradesh" />
       <div>
@@ -68,11 +68,15 @@ function Geography(){
 
 function Map() {
   return(
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d931454.9621761997!2d75.367938!3d24.224427!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39642ea9db15e09f%3A0x89a3e5ea4399695b!2sMandsaur%2C%20Madhya%20Pradesh%2C%20India!5e0!3m2!1sen!2sus!4v1708586315798!5m2!1sen!2sus"
-      referrerPolicy="no-referrer-when-downgrade"
-      className="w-[500px] h-96 border-none mx-auto"
-    ></iframe>
+    <div
+      className="flex text-center mx-auto justify-center w-auto rounded-3xl backdrop-blur-sm p-20"
+    >
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d931454.9621761997!2d75.367938!3d24.224427!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39642ea9db15e09f%3A0x89a3e5ea4399695b!2sMandsaur%2C%20Madhya%20Pradesh%2C%20India!5e0!3m2!1sen!2sus!4v1708586315798!5m2!1sen!2sus"
+        referrerPolicy="no-referrer-when-downgrade"
+        className="w-[500px] h-96 border-none mx-auto"
+      ></iframe>
+    </div>
   );
 }
 
