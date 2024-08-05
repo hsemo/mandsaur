@@ -1,4 +1,4 @@
-import {Link} from 'react-router-dom';
+import './Links.css';
 
 const links = [
   {
@@ -18,15 +18,19 @@ const links = [
 export default function Links(){
   return(
     <ul
-      className="list-none flex flex-col justify-center items-center h-full mt-4"
+      className="list-none flex flex-col items-center h-full mt-4"
     >
       {
         links.map(({href, title}) => {
           return(
             <li>
               <a
-                className="text-2xl"
-                href={href}>{title}</a>
+                className="text-[#01c48a] text-2xl relative text-shadow transition-transform duration-200"
+                href={href}
+                target='_blank'
+            >
+              {title}
+            </a>
             </li>
           );
       })
