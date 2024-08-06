@@ -1,4 +1,4 @@
-import './Links.css';
+import '../App.css';
 
 const links = [
   {
@@ -25,7 +25,7 @@ export default function Links(){
           return(
             <li>
               <a
-                className="text-[#01c48a] text-2xl relative text-shadow transition-transform duration-200"
+                className="text-[#01c48a] text-2xl relative text-shadow transition-[text-shadow] duration-500"
                 href={href}
                 target='_blank'
             >

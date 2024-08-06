@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { AiOutlineClose } from 'react-icons/ai';
 
 const places = [
   {
@@ -35,10 +36,10 @@ function Modal({showModal, toggleModal, img, title}:{showModal: boolean, toggleM
   return(
     <div className={(showModal ? '' : 'hidden ') + "fixed h-screen w-screen flex flex-wrap flex-col justify-start items-center bg-black/[.8] z-50 overflow-auto"}>
       <button
-        className="absolute top-0 right-0 m-2 px-4 py-2 bg-red-500 text-black rounded-full hover:bg-red-700 hover:text-white"
+        className="absolute top-0 right-0 m-2 p-2 bg-red-500 text-black rounded-full hover:bg-red-700 hover:text-white"
         onClick={toggleModal}
       >
-        X
+       <AiOutlineClose size={20} />
       </button>
 
       <h1 className="animate-zoom text-2xl my-2">
