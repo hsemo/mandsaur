@@ -4,31 +4,31 @@ import { AiOutlineClose } from 'react-icons/ai';
 const places = [
   {
     title: "Buddhist Caves",
-    image: "/public/historical/Buddhist Caves.jpg"
+    image: "/historical/Buddhist Caves.jpg"
   },
   {
     title: "Dharmarajeshwar Temple",
-    image: "/public/historical/Dharmarajeshwar Temple.jpg"
+    image: "/historical/Dharmarajeshwar Temple.jpg"
   },
   {
     title: "Lord Pashupatinath",
-    image: "/public/historical/Pashupatinath Temple.jpg"
+    image: "/historical/Pashupatinath Temple.jpg"
   },
   {
     title: "Chaturbhuj Nala",
-    image: "/public/historical/Chaturbhuj Nala.jpg"
+    image: "/historical/Chaturbhuj Nala.jpg"
   },
   {
     title: "Lord Pashupatinath Temple",
-    image: "/public/historical/Pashupatinath Temple.png"
+    image: "/historical/Pashupatinath Temple.png"
   },
   {
     title: "Vijay Stambh",
-    image: "/public/historical/Vijay Stambh.jpg"
+    image: "/historical/Vijay Stambh.jpg"
   },
   {
     title: "Gandhi Sagar Dam",
-    image: "/public/historical/Gandhi Sagar Dam.jpg"
+    image: "/historical/Gandhi Sagar Dam.jpg"
   }
 ];
 
