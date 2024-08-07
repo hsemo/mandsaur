@@ -7,7 +7,7 @@ export default function Layout(){
   return (
     <>
       <div
-        className="w-full h-full bg-cover fixed -z-50 bg-slate-900"
+        className="w-full h-full bg-cover object-cover fixed -z-50 bg-slate-900"
         style={{backgroundImage: `url(${noise})`}}
       >
       </div>
