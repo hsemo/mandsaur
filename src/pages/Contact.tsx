@@ -4,11 +4,11 @@ import '../App.css';
 
 export default function Contact() {
   return (
-    <div className="w-full flex flex-col items-center mt-4 text-2xl text-center text-[#01c48a]">
+    <div className="w-full flex flex-col items-center mt-4 text-xl md:text-2xl text-center text-[#01c48a]">
       <p>If you want to contact me, please write to:</p>
       <a
         href="mailto:ab.r4thore@gmail.com"
-        className="text-shadow hover:scale-150 hover:font-bold transition-all duration-500"
+        className="text-shadow hover:scale-150 hover:font-bold focus:scale-150 focus:font-bold transition-all duration-500"
       >
         ab.r4thore@gmail.com
       </a>

@@ -42,7 +42,12 @@ const Navbar = () => {
    */
 
   return (
-    <div className="backdrop-blur-md backdrop-brightness-50 flex justify-end md:justify-center items-center h-14 max-w-full mx-auto px-4 text-white sticky top-0 z-10">
+    <div className="backdrop-blur-md backdrop-brightness-50 flex justify-between md:justify-between items-center h-14 max-w-full mx-auto px-4 text-white sticky top-0 z-10">
+      <Link
+        to="/"
+        className="text-left uppercase text-[#00df9a] text-2xl tracking-wider z-50"
+      >Mandsaur</Link>
+
       {/* Desktop Navigation */}
       <ul className="hidden md:flex">
         {navItems.map((item) => (
@@ -62,25 +67,28 @@ const Navbar = () => {
       </ul>
 
       {/* Mobile Navigation Icon */}
-      <div onClick={handleNav} className="block md:hidden">
+      <div onClick={handleNav} className="block md:hidden z-10">
         {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
       </div>
 
       {/* Mobile Navigation Menu */}
       <ul
         className={
-          nav
-            ? "fixed md:hidden left-0 top-0 w-[60%] h-full border-r border-r-gray-900 ease-in-out duration-500"
-            : "ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%]"
+          "fixed md:hidden text-left flex flex-col gap-2 flex-wrap justify-start pt-14 items-center w-[60%] h-screen bg-transparent backdrop-blur-md ease-in-out duration-500"
+            + (
+              nav
+                ? " left-0 top-0"
+                : " top-0 bottom-0 left-[-100%]"
+              )
         }
       >
         {/* Mobile Navigation Items */}
         {navItems.map((item) => (
-          <li key={item.id}>
+          <li key={item.id} className="w-full">
             <Link
               className={
-                "p-4 border-b rounded-xl hover:bg-[#00df9a] duration-300 hover:text-black cursor-pointer border-gray-600" +
-                (item.id === activeNavItem ? " text-[#00df9a]" : "")
+                "inline-block w-[calc(100%-1rem)] max-w-full ml-4 border-b-2 duration-300 text-[#00df9a] cursor-pointer border-[#00df9a] hover:text-white hover:border-white focus:text-white focus:border-white" +
+                (item.id === activeNavItem ? " text-white" : "")
               }
               to={item.to}
               onClick={() => setActiveNavItem(item.id)}
